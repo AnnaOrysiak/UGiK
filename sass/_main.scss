@@ -1,0 +1,281 @@
+main {
+  section {
+    position: relative;
+    min-height: 100vh;
+    padding: 5rem 2rem;
+
+    h2 {
+      position: relative;
+      margin-bottom: 2rem;
+      color: $dark;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h2::after {
+      @include positionAbsoluteCenterX();
+      content: "";
+      bottom: -2rem;
+      width: 100px;
+      height: 2px;
+      background-color: $beige;
+    }
+
+    article {
+      padding: 4rem 0 0;
+
+      h3 {
+        padding-bottom: 1rem;
+        text-align: center;
+        letter-spacing: 2px;
+      }
+
+      p {
+        text-align: justify;
+        line-height: 1.5;
+      }
+    }
+
+    .art1,
+    .art2,
+    .art3 {
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity .5s, ease-in-out, transform .5s ease-in-out;
+    }
+
+    ul {
+      width: 90%;
+      margin: 0 0 0 10%;
+      list-style: circle;
+      color: $beige;
+
+      li {
+        padding: .5rem 0;
+        opacity: 0;
+        transition: opacity .5s .2s ease-in-out;
+
+        p {
+          color: $dark;
+          text-align: left;
+        }
+      }
+    }
+
+    .active,
+    .active,
+    .active {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    border-top: 50px solid white;
+    border-right: 100vw solid transparent;
+    z-index: 1;
+  }
+
+  .offer {
+    background-color: $dark;
+
+    h2,
+    p {
+      color: $light;
+    }
+  }
+
+  .offer::after {
+    border-top-color: $dark;
+  }
+
+  .contact {
+    @include flexRow();
+
+    h2 {
+      flex-basis: 100%;
+    }
+
+    article {
+      @include flexRow();
+
+      p {
+        padding: 0;
+        line-height: 1;
+
+        i {
+          font-size: 2rem;
+        }
+      }
+
+      p:nth-child(1),
+      p:nth-child(2) {
+        flex-basis: 35%;
+        margin: 0 auto 3rem;
+        text-align: center;
+
+        a {
+          position: relative;
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          background-color: $beige;
+          border-radius: 50%;
+          text-align: center;
+
+          i {
+            @include positionAbsoluteCenterXY();
+            top: 50%;
+          }
+        }
+      }
+    }
+
+    .map {
+      padding: 2rem 0 0;
+      text-align: center;
+
+      iframe {
+        width: 100vw;
+        height: 60vw;
+        filter: grayscale(1);
+      }
+
+      a {
+        display: block;
+        padding: 1rem 0 0;
+        color: $beige;
+      }
+    }
+  }
+}
+
+@media (orientation:landscape) and (max-width:1023px) {
+  main {
+    section article {
+      padding: 4rem 2rem 0;
+    }
+
+    .contact {
+      p:nth-child(3) {
+        flex-basis: 100%;
+        text-align: center;
+      }
+
+      .map iframe {
+        width: 80vw;
+        height: 60vh;
+      }
+
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  main {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .aboutUs,
+    .offer,
+    .contact {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateX(100%);
+      transition: transform .5s;
+      background-color: transparent;
+
+      h2,
+      p {
+        color: $dark;
+      }
+
+      h2 {
+        flex-basis: 30%;
+        order: 0;
+      }
+
+      article {
+        flex-basis: 70%;
+        order: 1;
+        padding: 0 5vw 2rem;
+      }
+    }
+
+    .offer article {
+      padding: 10vh 0;
+
+      ul li {
+        padding: 1.5rem 0;
+      }
+    }
+
+
+    .contact {
+      article {
+        flex-basis: 20%;
+        order: 1;
+        flex-direction: column;
+        padding: 10vh 0;
+
+        p {
+          display: block;
+          text-align: center;
+
+          i {
+            font-size: 3rem;
+          }
+        }
+
+        p:nth-child(1),
+        p:nth-child(2) {
+          flex-basis: 20%;
+
+          a {
+            display: block;
+            transition: transform .3s ease-in-out;
+          }
+
+          a:hover {
+            transform: rotate(-30deg);
+          }
+        }
+      }
+
+      .map {
+        flex-basis: 50%;
+        order: 1;
+        padding: 10vh 0 0;
+
+        iframe {
+          width: 40vw;
+          height: 30vw;
+          filter: grayscale(1);
+        }
+
+        a {
+          display: block;
+          padding: 1rem 0 0;
+          color: $beige;
+        }
+      }
+    }
+
+    .active {
+      transform: translate(0);
+    }
+  }
+}

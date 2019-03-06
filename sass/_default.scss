@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: $light;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  color: $beige;
+}
+
+body {
+  background-color: $dark;
+  color: $dark;
+  font-family: $font-family;
+  font-size: 1.2rem;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.menu-open {
+  overflow: unset;
+}
+
+@media (min-width: 1024px) {
+
+  h1,
+  h2 {
+    color: $dark;
+  }
+
+  body {
+    font-size: 1.5rem;
+  }
+
+  .wrapper {
+    position: relative;
+    height: 100vh;
+    background: center/cover no-repeat $bg-desktop;
+    overflow: hidden;
+  }
+
+
+}

@@ -1,3 +1,6 @@
+const functionPage = () => {
+
+
     // FUNKCJA SCROLL
     const $doc = $(document);
 
@@ -5,11 +8,9 @@
         if (window.innerWidth < 1024) {
             // zmienne lokalne
             const $header = $('header');
-
             const $art1 = $('.art1');
             const $art2 = $('.art2');
             const $art3 = $('.art3');
-
             const $offer = $('.offer ul li');
 
             const scrollPos = $doc.scrollTop();
@@ -54,7 +55,7 @@
             if (scrollPos > offerFromTop + offerHeight - windowHeight) {
                 $offer.addClass('active');
             }
-        } else {}
+        } else { }
     })
 
     // SCROLLUJ DO... (MOBILE MODE) // ODKRYJ SEKCJĘ... (DESKTOP MODE)
@@ -68,18 +69,30 @@
         } else {
             const main = document.querySelector("main");
             const sections = document.querySelectorAll("main section");
-            const $header = $('header');
+            const articles = document.querySelectorAll("article");
+            const list = document.querySelectorAll(".offer ul li");
+            const header = document.querySelector("header");
 
             sections.forEach(section => {
                 main.classList.remove("active");
-                section.classList.remove("show");
-                section.classList.remove("active")
-                $header.removeClass("active");
+                section.classList.remove("active");
+                header.classList.remove("active");
+                if (section.classList.contains("aboutUs")) {
+                    for (const article of articles) {
+                        article.classList.remove("active");
+                    }
+                }
+                if (section.classList.contains("offer")) {
+                    for (const element of list) {
+                        element.classList.remove("active");
+                    }
+                }
+
             });
 
-            if ($(this).attr("data-key") == "main") {
+            if ($(this).attr("data-key") == "start") {
                 setTimeout(function () {
-                    $header.addClass("active")
+                    header.classList.add("active")
                 }, 500)
             } else {
                 sections.forEach(section => {
@@ -88,11 +101,31 @@
 
                         function showSection() {
                             section.classList.toggle("active");
-                            section.classList.toggle("show");
                             main.classList.toggle("active")
+                            if (section.classList.contains("aboutUs")) {
+                                let time = 100;
+                                for (const article of articles) {
+                                    setTimeout(() => {
+                                        article.classList.add("active")
+                                    }, time);
+                                    time = time + 200;
+                                }
+                            }
+                            if (section.classList.contains("offer")) {
+                                let time = 100;
+                                for (const element of list) {
+                                    setTimeout(() => {
+                                        element.classList.add("active")
+                                    }, time);
+                                    time = time + 100;
+                                }
+                            }
                         }
-                    } else {}
+                    } else { }
                 });
             }
         }
     })
+}
+
+functionPage();

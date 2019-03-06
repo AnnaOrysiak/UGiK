@@ -1,0 +1,22 @@
+footer {
+  padding: 4rem 0 2rem;
+  background-color: $dark;
+  color: white;
+  text-align: center;
+
+  span {
+    color: $beige;
+  }
+}
+
+@media (min-width:1024px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    background-color: $transparent-dark;
+    z-index: 2;
+  }
+}

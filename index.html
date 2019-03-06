@@ -27,53 +27,61 @@
     <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
     <link rel="manifest" href="favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#000">
     <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#000">
 
     <!--Reszta stylów-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="active">
-            <div></div>
-            <div class="showScroll"></div>
-            <section>
-                <h1>Usługi Geodezyjne i Kartograficzne</h1>
-                <h2>Krzysztof Walkiewicz</h2>
-            </section>
-        </header>
 
         <nav>
-            <ul>
-                <li><a href="#" data-key="main">Start</a></li>
+            <div class="toggler">
+                <div id="toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="navigation">
+                <li><a href="#" data-key="start">Start</a></li>
                 <li><a href="#" data-key="aboutUs">Dlaczego my</a></li>
                 <li><a href="#" data-key="offer">Oferta</a></li>
                 <li><a href="#" data-key="contact">Kontakt</a></li>
             </ul>
         </nav>
 
+        <header class="start ">
+            <section class="companyName">
+                <h1>Usługi Geodezyjne i Kartograficzne</h1>
+                <h2>Krzysztof Walkiewicz</h2>
+            </section>
+            <div class="showScroll"></div>
+        </header>
+
         <main>
 
             <section class="aboutUs">
-                <h1>Dlaczego my</h1>
+                <h2>Dlaczego my</h2>
                 <article class="art1">
-                    <h2>Zaangażowanie</h2>
+                    <h3>Zaangażowanie</h3>
                     <p>Zadowolenie klienta jest dla nas najlepszą motywacją, dlatego do każdego zlecenia podchodzimy
                         indywidualnie.</p>
                 </article>
                 <article class="art2">
-                    <h2>Profesjonalizm</h2>
+                    <h3>Profesjonalizm</h3>
                     <p>Jesteśmy firmą, działającą na rynku od ponad 20 lat. Posiadamy szerokie doświadczenie w
                         wykonywaniu prac z zakresu geodezji oraz kartografii.</p>
                 </article>
                 <article class="art3">
-                    <h2>Perfekcja</h2>
+                    <h3>Perfekcja</h3>
                     <!--                    poprawić ten akapit i ten powyżej-->
                     <p>W naszej pracy łączymy metody klasyczne oraz zdobycze współczesnej technologii. Korzystamy z
                         nowoczesnego sprzętu i specjalistycznego oprogramowania.</p>
@@ -81,28 +89,35 @@
             </section>
 
             <section class="offer">
-                <h1>Oferta</h1>
+                <h2>Oferta</h2>
                 <article>
                     <ul>
-                        <li>Pomiary sytuacyjne i wysokościowe</li>
-                        <li>Ustalenia granic</li>
-                        <li>Podziały nieruchomości</li>
-                        <li>Wytyczenia budowli</li>
-                        <li>Inwentaryzacje urządzeń podziemnych</li>
+                        <li>
+                            <p>Pomiary sytuacyjne i wysokościowe</p>
+                        </li>
+                        <li>
+                            <p>Ustalenia granic</p>
+                        </li>
+                        <li>
+                            <p>Podziały nieruchomości</p>
+                        </li>
+                        <li>
+                            <p>Wytyczenia budowli</p>
+                        </li>
+                        <li>
+                            <p>Inwentaryzacje urządzeń podziemnych</p>
+                        </li>
                     </ul>
                 </article>
             </section>
 
-            <section class="contact">
-                <h1>Kontakt</h1>
+            <section class="contact active">
+                <h2>Kontakt</h2>
                 <article>
-                    <p> <a href="tel:+48 604 153 318"><i class="fas fa-phone"></i> 604 153 318</a> </p>
-                    <p> <a href="mailto:ugikkrzysztofwalkiewicz@gmail.com"><i class="far fa-envelope"></i> Wyślij
-                            wiadomość</a></p>
+                    <p> <a href="tel:+48 604 153 318"><i class="fas fa-phone"></i></a> </p>
+                    <p> <a href="mailto:ugikkrzysztofwalkiewicz@gmail.com"><i class="far fa-envelope"></i></a></p>
                     <p><i class="fas fa-map-marker-alt"></i> ul. Stanisława Mikołajczyka 1 </p>
                     <p> <i> &ensp; </i> 63-800 Gostyń</p>
-
-
                 </article>
                 <div class="map">
                     <!-- Źródło mapy: OpenStreetMap.org -->
@@ -116,12 +131,13 @@
         </main>
 
         <footer>
-            <p>2018 &copy; UGiK Krzysztof Walkiewicz</p>
+            <p>2018 &copy; <span>UGiK Krzysztof Walkiewicz</span></p>
         </footer>
     </div>
 
     <script src="script/jquery-3.3.1.min.js"></script>
     <script src="script/script.js"></script>
+    <script src="script/hamburger.js"></script>
 </body>
 
 </html>
