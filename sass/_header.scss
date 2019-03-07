@@ -2,7 +2,7 @@ header {
   position: relative;
   width: 100%;
   min-height: 90vh;
-  background: top/cover no-repeat $bg-portrait;
+  background: $light $bg-portrait no-repeat top/cover;
 
   .showScroll {
     position: relative;
@@ -88,7 +88,7 @@ header {
 @media (orientation:landscape) {
   header {
     min-height: 100vh;
-    background: center/cover no-repeat $bg-landscape;
+    background: $light $bg-landscape no-repeat center/cover;
 
     .showScroll {
       top: 50vh;

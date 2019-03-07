@@ -47,7 +47,7 @@ body {
   .wrapper {
     position: relative;
     height: 100vh;
-    background: center/cover no-repeat $bg-desktop;
+    background: $light $bg-desktop no-repeat center/cover;
     overflow: hidden;
   }
 
