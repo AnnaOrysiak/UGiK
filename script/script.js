@@ -90,15 +90,11 @@ const functionPage = () => {
             });
 
             if ($(this).attr("data-key") == "start") {
-                setTimeout(function () {
-                    header.classList.add("active")
-                }, 500)
+                header.classList.add("active")
             } else {
                 sections.forEach(section => {
                     if (section.classList.contains($(this).attr('data-key'))) {
-                        setTimeout(showSection, 500)
 
-                        function showSection() {
                             section.classList.toggle("active");
                             main.classList.toggle("active")
                             if (section.classList.contains("aboutUs")) {
@@ -118,7 +114,7 @@ const functionPage = () => {
                                     }, time);
                                     time = time + 100;
                                 }
-                            }
+                            
                         }
                     } else { }
                 });

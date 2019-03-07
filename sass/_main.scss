@@ -111,6 +111,10 @@ main {
         i {
           font-size: 2rem;
         }
+
+        span {
+          display: none;
+        }
       }
 
       p:nth-child(1),
@@ -232,11 +236,25 @@ main {
         padding: 10vh 0;
 
         p {
+          position: relative;
           display: block;
           text-align: center;
+          font-size: 1rem;
 
           i {
             font-size: 3rem;
+          }
+
+          span {
+            display: block;
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
           }
         }
 
@@ -251,6 +269,10 @@ main {
 
           a:hover {
             transform: rotate(-30deg);
+          }
+
+          a:hover+span {
+            opacity: 1;
           }
         }
       }
