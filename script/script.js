@@ -43,13 +43,13 @@ const functionPage = () => {
                 $offer.removeClass('active');
             }
 
-            if (scrollPos > art1FromTop + art1Height - windowHeight) {
+            if (scrollPos > art1FromTop - 2 * art1Height) {
                 $art1.addClass('active');
             }
-            if (scrollPos > art2FromTop + art2Height - windowHeight) {
+            if (scrollPos > art2FromTop - 2 * art2Height) {
                 $art2.addClass('active');
             }
-            if (scrollPos > art3FromTop + art3Height - windowHeight) {
+            if (scrollPos > art3FromTop - 2 * art3Height) {
                 $art3.addClass('active');
             }
             if (scrollPos > offerFromTop + offerHeight - windowHeight) {
@@ -87,7 +87,6 @@ const functionPage = () => {
                         element.classList.remove("active");
                     }
                 }
-
             });
 
             if ($(this).attr("data-key") == "start") {
