@@ -1,12 +1,10 @@
 const functionPage = () => {
 
-
     // FUNKCJA SCROLL
     const $doc = $(document);
 
     $doc.on("scroll", function () {
         if (window.innerWidth < 1024) {
-            // zmienne lokalne
             const $header = $('header');
             const $art1 = $('.art1');
             const $art2 = $('.art2');
@@ -66,6 +64,10 @@ const functionPage = () => {
             $("body, html").animate({
                 scrollTop: $(goToSection).offset().top
             }, 300)
+
+            $('#toggler').toggleClass('open');
+            $('nav ul').toggleClass('open');
+
         } else {
             const main = document.querySelector("main");
             const sections = document.querySelectorAll("main section");
@@ -95,26 +97,26 @@ const functionPage = () => {
                 sections.forEach(section => {
                     if (section.classList.contains($(this).attr('data-key'))) {
 
-                            section.classList.toggle("active");
-                            main.classList.toggle("active")
-                            if (section.classList.contains("aboutUs")) {
-                                let time = 100;
-                                for (const article of articles) {
-                                    setTimeout(() => {
-                                        article.classList.add("active")
-                                    }, time);
-                                    time = time + 200;
-                                }
+                        section.classList.toggle("active");
+                        main.classList.toggle("active")
+                        if (section.classList.contains("aboutUs")) {
+                            let time = 100;
+                            for (const article of articles) {
+                                setTimeout(() => {
+                                    article.classList.add("active")
+                                }, time);
+                                time = time + 200;
                             }
-                            if (section.classList.contains("offer")) {
-                                let time = 100;
-                                for (const element of list) {
-                                    setTimeout(() => {
-                                        element.classList.add("active")
-                                    }, time);
-                                    time = time + 100;
-                                }
-                            
+                        }
+                        if (section.classList.contains("offer")) {
+                            let time = 100;
+                            for (const element of list) {
+                                setTimeout(() => {
+                                    element.classList.add("active")
+                                }, time);
+                                time = time + 100;
+                            }
+
                         }
                     } else { }
                 });

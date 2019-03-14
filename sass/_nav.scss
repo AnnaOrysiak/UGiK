@@ -4,7 +4,7 @@ nav {
   left: 0;
   right: 0;
   max-width: $max-width;
-  min-height: 100px;
+  min-height: 10px;
   z-index: 2;
   transition: .5s;
 
@@ -61,6 +61,10 @@ nav {
       }
     }
 
+    #toggler.open span {
+      background: $beige;
+    }
+
     #toggler.open span:nth-child(1) {
       top: 15px;
       width: 0%;
@@ -89,7 +93,7 @@ nav {
   }
 
   ul {
-    padding: 3rem 1rem 1rem;
+    padding: 0 1rem;
     background-color: $transparent-dark;
     transform: translateY(-100%);
     list-style: none;
@@ -103,7 +107,7 @@ nav {
       a {
         display: block;
         color: $light;
-        line-height: 4rem;
+        line-height: 3rem;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -123,11 +127,6 @@ nav {
 
 .open {
   transform: translateY(0%);
-
-  .toggler {
-    right: 10px;
-    left: auto;
-  }
 }
 
 @media (orientation:landscape) {
